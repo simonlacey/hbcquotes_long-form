@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic template</title>
-    <!-- Bootstrap (necessary for Smoke CSS plugins) -->
+    <title>HBCQuotes - Long Form Template</title>
+
+    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <!-- Smoke -->
-    <link href="css/smoke.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,10 +22,9 @@
 
 <div class="container form-container">
     <div class="row">
-        <!-- header text -->
         <div class="col-md-12 col-sm-12">
             <div class="form-header">
-                <h2>The Fastest Way To Get Free Health Insurance Quotes and Save</h2>
+                <h2>Need Health Insurance?</h2>
                 <p class="intro">Please enter your information below. All information provided will be kept safe and secure and will be used to connect you with agents who can provide quotes for the insurance products you are looking for.</p>
             </div>
         </div>
@@ -130,14 +128,14 @@
                         <br>
 
                         <div class="form-group col-md-6 col-sm-12">
-                            <label class="expand-label" for="Primary_Phone">Primary Phone:</label>
-                            <input class="required" name="Primary_Phone" id="Primary_Phone" type="tel" size="10" maxlength="10" placeholder="">
+                            <label class="expand-label" for="phonenumber">Phone Number:</label>
+                            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" required="" placeholder="Phone Number">
                         </div>
 
-                        <!-- todo - update phone number using hugos version -->
+                        <!-- todo - hugo get this to work like on simplehealthplans website - you da man -->
                         <!--<div class="form-group col-md-6 col-sm-12">
-                            <label class="expand-label" for="Primary_Phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="Primary_Phone" name="Primary_Phone" required="" placeholder="Phone Number">
+                            <label class="expand-label" for="Primary_Phone">Primary Phone:</label>
+                            <input type="tel" class="form-control required" size="10" maxlength="10" id="Primary_Phone" name="Primary_Phone" placeholder="Phone Number">
                         </div>-->
 
                         <div class="form-group col-md-6 col-sm-12">
@@ -173,25 +171,6 @@
                                 <option>11</option>
                             </select>
                         </div>
-                        <!-- removed per Rob - 09/29/15 - keeping it in for template
-                        <div class="form-group col-md-6 col-sm-12">
-                            <label class="expand-label" for="heightinches">Inches:</label>
-                            <select class="required" name="applicant_heightIN" id="heightinches" placeholder="">
-                                <option value="inches">-inches-</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                            </select>
-                        </div> -->
                         <div class="form-group col-md-6 col-sm-12">
                             <label class="expand-label" for="weight" id="weight-label">Weight in lbs:</label>
                             <input class="required" type="number" maxlength="3" name="applicant_weight" id="weight" placeholder="">
@@ -502,8 +481,14 @@
         </div>
         <div class="row terms-container">
             <div class="col-md-4 col-sm-12 col-xs-12 pull-right">
-                <button type="submit" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>Get My Quotes</button>
+
+
+                <button type="submit" id="submit" class="btn btn-default btn-lg">
+                    Schedule Your Appt
+                </button>
+
+                <!--<button type="submit" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>Get My Quotes</button>-->
             </div>
             <div class="col-md-8 col-xs-12 push-left">
                 <p class="terms">By clicking "Get Your Quotes" I provide my signature, expressly authorizing Simple Insurance Leads or one of these <a href="http://www.hbcquotes.com/template/orgs.html" target="_blank">organizations</a> to contact me at the number and address provided with insurance quotes or to obtain additional information for such purpose, via live, prerecorded or auto-dialed calls, text messages or email. I understand that my signature is not a condition of purchasing any property, goods or services and that I may revoke my consent at any time. To speak directly to a representative for a quote, please call HBCQuotes.com at 1-877-386-9926. By using this form, you agree to the terms of our <a href="#modal-privacy" class="" data-toggle="modal">Privacy Policy</a>.</p>
@@ -512,27 +497,73 @@
     </div>
 </div>
 
-<!-- jQuery (necessary for Smoke JavaScript plugins) -->
-<script src="js/jquery.js"></script>
+<!--<div class="container text-center contact-simple-section">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="contact-header uppercase">
+                <p class="contact-agent-header">Schedule A Call From A Licensed Agent<br>
+                    <span class="contact-agent-subheader">It's FAST and it's SIMPLE</span></p>
+            </div>
+            <form id="form" action="mailer.php" method="post" class="form-inline col-lg-12 col-md-12 col-sm-12 col-xs-12" onsubmit="alert('Thank you for your interest. We will contact you shortly.');">
+                <div class="form-group">
+                    <label class="sr-only" for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required="" placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required="" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="phonenumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phonenumber" name="phonenumber" required="" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <select id="insurancetype" name="insurancetype" required="" class="form-control">
+                        <option value="">Type of Insurance</option>
+                        <option value="Health">Health</option>
+                        <option value="Life">Life</option>
+                        <option value="Medicare">Medicare</option>
+                        <option value="Auto">Auto</option>
+                        <option value="Home">Home</option>
+                    </select>
+                </div>
+                <div class="form-horizontal">
+                    <label class="sr-only" for="message"></label>
+                    <textarea id="message" name="message" required="" class="form-control" rows="3" placeholder="Message..."></textarea>
+                </div>
+                <button type="submit" id="submit" class="btn btn-default btn-primary btn-secondary btn-schedule">
+                    Schedule Your Appt
+                </button>
+                <div>
+                    <p class="disclosure">
+                        By clicking ‘Schedule Your Appt’, I am requesting an insurance and/or insurance related product quote and
+                        authorize Simple Health, Simple Health Plans Inc, its agents or affiliate/partner companies to
+                        contact me (even if I’m on a state or national DO NOT CALL registry) at the e-mail, mobile phone
+                        and/or landline information I submitted, to provide me a quote or to obtain additional
+                        information needed to provide me a quote and to follow up with respect to a quote thereafter.
+                        The company may contact me through the use of an automated dialer or by use of a prerecorded
+                        message. I acknowledge that I am not required to authorize such marketing calls as a condition
+                        of purchasing a policy.
+                    </p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- Bootstrap (necessary for Smoke JavaScript plugins) -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/hidden.js"></script>
 
-
-
-
-<!-- todo check bootstrap form validation - see if smokes has better ux -->
-<!-- Smoke -->
-<!--<script src="js/smoke.min.js"></script>-->
-
-
-<!-- todo - fix input mask -->
 <!-- Library for inputmask in phone number input -->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
 
 <!-- InputMask for phone number input field -->
-<!--<script>
+<script>
     $(window).load(function () {
         var phones = [{"mask": "(###) ###-####"}];
         $('#phonenumber').inputmask({
@@ -541,7 +572,7 @@
             definitions: {'#': {validator: "[0-9]", cardinality: 1}}
         });
     });
-</script>-->
+</script>
 
 </body>
 </html>
