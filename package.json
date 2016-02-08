@@ -1,0 +1,26 @@
+{
+  "name": "hbcquotes_long-form",
+  "version": "1.0.0",
+  "description": "hbcquotes long form modular template",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonlacey/hbcquotes_long-form.git"
+  },
+  "keywords": [
+    "hbcquotes",
+    "long",
+    "form",
+    "modular",
+    "template"
+  ],
+  "author": "simon lacey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonlacey/hbcquotes_long-form/issues"
+  },
+  "homepage": "https://github.com/simonlacey/hbcquotes_long-form#readme"
+}
